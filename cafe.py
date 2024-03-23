@@ -30,7 +30,7 @@ for item in menu:
                 total_stock += (item_value)
 
         except KeyError:
-                print("There is no {item} listed in the stock or price listing")
+                print(f"There is no {item} listed in the stock or price listing. Total stock worth in the cafe will not include {item}.")
 
 print(f"The total stock worth in the cafe is £{total_stock}.")
 
