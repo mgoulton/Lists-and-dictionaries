@@ -18,11 +18,19 @@ price = {'hot chocolate': 3.55,
          'cheesecake': 3.20
         }
 
-# total value of stock kept in the cafe, calculated per item
-item_value = [round(stock[item]*price[item],2) for item in menu]
+total_stock = 0
 
-#total value of stock kept in the cafe, overall
-total_stock = sum(item_value)
+for item in menu:
+
+        try:
+                # total value of stock kept in the cafe, calculated per item
+                item_value = round(stock[item]*price[item],2)
+
+                #total value of stock kept in the cafe, overall
+                total_stock += (item_value)
+
+        except KeyError:
+                print("There is no {item} listed in the stock or price listing")
 
 print(f"The total stock worth in the cafe is £{total_stock}.")
 
